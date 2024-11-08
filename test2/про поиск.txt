@@ -1,8 +1,0 @@
-Я использовал модель с Hugging Face:
-google-bert/bert-large-uncased-whole-word-masking-finetuned-squad, доступную по ссылкe:
-https://huggingface.co/google-bert/bert-large-uncased-whole-word-masking-finetuned-squad 
-Она была протестирована на многих вопросах, и правильный ответ всегда входил в топ-10. 
-У меня был опыт работы с text-embedding-3-large от OpenAI,
- и она справлялась с такой задачей на ура.
-Можно добавить, если искать не по всему csv файлу, а только в определенном тексте, то 
-google-bert/bert-large-uncased-whole-word-masking-finetuned-squad справляеться в 95% случае.
