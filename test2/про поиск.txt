@@ -6,3 +6,55 @@ https://huggingface.co/google-bert/bert-large-uncased-whole-word-masking-finetun
  и она справлялась с такой задачей на ура.
 Можно добавить, если искать не по всему csv файлу, а только в определенном тексте, то 
 google-bert/bert-large-uncased-whole-word-masking-finetuned-squad справляеться в 95% случае.
+Примеры:
+
+question = "What was the percentage drop in GlaxoSmithKline's profits last year?"
+из 114
+Top 10 Best Answers:
+Text Index: 325, Best Answer: $ 4 . 4bn, Confidence: 0.9465379118919373
+Text Index: 114, Best Answer: 9 %, Confidence: 0.9059957265853882
+Text Index: 427, Best Answer: 27 %, Confidence: 0.8809366226196289
+Text Index: 382, Best Answer: 1 %, Confidence: 0.8808860778808594
+Text Index: 385, Best Answer: 80 %, Confidence: 0.8600031733512878
+Text Index: 125, Best Answer: 1 %, Confidence: 0.8418276309967041
+Text Index: 438, Best Answer: 0 . 3 %, Confidence: 0.833556056022644
+Text Index: 452, Best Answer: 1 . 4 %, Confidence: 0.8290566205978394
+Text Index: 183, Best Answer: 43 %, Confidence: 0.8179941177368164
+Text Index: 70, Best Answer: 31 . 8 %, Confidence: 0.8106685876846313
+в этом примере во всем файле почти нашел ответ
+если взять только 114(ответ верен):
+Text Index: 114, Best Answer: 9 %, Confidence: 0.9059957265853882
+
+А в этом примере ответ даже не попал в топ 10
+question = "What is the estimated value of the six greyhound tracks that Wembley is selling?"
+из 222
+Top 10 Best Answers:
+Text Index: 209, Best Answer: gold, Confidence: 0.9772301912307739
+Text Index: 1785, Best Answer: $ 1 . 5m, Confidence: 0.9206979870796204
+Text Index: 1928, Best Answer: $ 11m, Confidence: 0.8913893103599548
+Text Index: 163, Best Answer: 9 . 3bn, Confidence: 0.864267110824585
+Text Index: 1413, Best Answer: 47 , 111, Confidence: 0.8629511594772339
+Text Index: 256, Best Answer: 10 billion lira, Confidence: 0.8353438377380371
+Text Index: 508, Best Answer: $ 1 . 30, Confidence: 0.829659104347229
+Text Index: 583, Best Answer: £57 . 2m, Confidence: 0.7682510614395142
+Text Index: 597, Best Answer: £57 . 2m, Confidence: 0.7682510614395142
+Text Index: 2170, Best Answer: rries, Confidence: 0.7344375252723694
+а например если в тексте по которому был придуман вопрос, то ответ верен
+Text Index: 222, Best Answer: between £40m - £50m, Confidence: 0.6748614311218262
+
+question = "What was Time Warner's quarterly profit for the three months to December?"
+из 0
+Top 10 Best Answers:
+Text Index: 152, Best Answer: £7 . 1bn, Confidence: 0.9622953534126282
+Text Index: 328, Best Answer: £189 , 733, Confidence: 0.9346471428871155
+Text Index: 117, Best Answer: 9 . 5bn kronor, Confidence: 0.8621008992195129
+Text Index: 1928, Best Answer: $ 11m, Confidence: 0.8541862368583679
+Text Index: 193, Best Answer: £5 . 1bn, Confidence: 0.8138638734817505
+Text Index: 0, Best Answer: $ 1 . 13bn, Confidence: 0.7680201530456543
+Text Index: 163, Best Answer: 9 . 3bn, Confidence: 0.7532767653465271
+Text Index: 887, Best Answer: £31 . 3m, Confidence: 0.7501193881034851
+Text Index: 1785, Best Answer: $ 1 . 5m, Confidence: 0.719639241695404
+Text Index: 201, Best Answer: $ 16bn, Confidence: 0.7172209620475769
+только 0 текст
+Text Index: 0Best Answer: $ 1 . 13bn, Confidence: 0.7680201530456543
+ответ правильный 
